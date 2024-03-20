@@ -63,7 +63,7 @@ resource "aws_launch_template" "launch_template" {
     }
   }
 
- user_data = filebase64("C:/Users/kavya/Documents/tasks/terraform-jenkins/jenkins_install.sh")
+ user_data = filebase64("jenkins_install.sh")
 }
 
 resource "aws_autoscaling_group" "auto_scaling_group" {
