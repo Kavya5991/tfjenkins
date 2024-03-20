@@ -63,7 +63,16 @@ resource "aws_launch_template" "launch_template" {
     }
   }
 
- user_data = filebase64("jenkins_install.sh")
+ user_data =  <<-EOF
+              #!/bin/bash
+              # Install Jenkins
+              sudo apt-get update
+              sudo apt-get install -y default-jdk
+              wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+              sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+              sudo apt-get update
+              sudo apt-get install -y jenkins
+              EOF
 }
 
 resource "aws_autoscaling_group" "auto_scaling_group" {
