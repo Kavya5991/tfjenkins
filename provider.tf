@@ -6,6 +6,9 @@ terraform {
     }
   }
 }
+terraform {
+  required_version = ">= 0.14"
+}
 
 # Configure the AWS Provider
 provider "aws" {
