@@ -43,7 +43,10 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-          
+      - name: Copy jenkins_install.sh to runner
+        run: |
+          mkdir -p $HOME/jenkins
+          cp jenkins_install.sh $HOME/jenkins  
 
       - name: Terraform Init
         id: init
