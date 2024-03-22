@@ -63,7 +63,7 @@ resource "aws_launch_template" "launch_template" {
     }
   }
 
- user_data = file("https://raw.githubusercontent.com/Kavya5991/tfjenkins/main/jenkins_install.sh")
+ user_data = file("$HOME/jenkins/jenkins_install.sh")
 }
 
 resource "aws_autoscaling_group" "auto_scaling_group" {
