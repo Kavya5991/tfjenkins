@@ -32,7 +32,7 @@ jobs:
 
   terraform-apply:
     needs: [tflint]  
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: hashicorp/setup-terraform@v3
