@@ -1,4 +1,4 @@
-name: Lint and terraform init,plan,apply
+name: Lint and terraform init,plan,Apply
 on:
   push:
     branches: main
