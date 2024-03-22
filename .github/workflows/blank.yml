@@ -45,8 +45,8 @@ jobs:
           aws-region: us-east-1
       - name: Copy jenkins_install.sh to runner
         run: |
-          mkdir -p $HOME/jenkins
-          cp jenkins_install.sh $HOME/jenkins  
+          mkdir -p /tmp/jenkins
+          cp jenkins_install.sh /tmp/jenkins  
 
       - name: Terraform Init
         id: init
